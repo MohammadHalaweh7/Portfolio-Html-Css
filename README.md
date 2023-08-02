@@ -1,4 +1,4 @@
-# Responsive React Portfolio
+# Responsive Portfolio
 
 Tools : Html5 and Css3
 
