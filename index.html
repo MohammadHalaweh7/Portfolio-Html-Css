@@ -655,9 +655,9 @@
             <i class="fa fa-cog fa-spin" aria-hidden="true"></i>
         </div>
         <div class="theam-box">
-            <div class="box box1"></div>
-            <div class="box box2"></div>
-            <div class="box box3"></div>
+            <div data-color="aqua" class="box box1"></div>
+            <div data-color="orange" class="box box2"></div>
+            <div data-color="green" class="box box3"></div>
         </div>
     </section>
     <!------------------------------- End control section -------------------------------->
@@ -698,25 +698,53 @@
 
         }
 
-        const box1Btn = document.querySelector(".box1");
-        const box2Btn = document.querySelector(".box2");
-        const box3Btn = document.querySelector(".box3");
+        // for theme mode
+        var boxs = document.querySelectorAll(".box");
+        var root = document.querySelector(":root");
 
-        box1Btn.onclick = function () {
-            document.body.classList.add("aqua-theme");
-            document.body.classList.remove("orange-theme");
-            document.body.classList.remove("green-theme");
+        boxs.forEach((box) => {
+            box.addEventListener("click", (e) => {
+                console.log(e.currentTarget.dataset.color);
+                window.localStorage.setItem("color", e.currentTarget.dataset.color);
+                root.style.setProperty('--main-color', e.currentTarget.dataset.color);
+            })
+        })
+
+        if (window.localStorage.getItem("color")) {
+            root.style.setProperty('--main-color', window.localStorage.getItem("color"));
         }
-        box2Btn.onclick = function () {
-            document.body.classList.add("orange-theme");
-            document.body.classList.remove("aqua-theme");
-            document.body.classList.remove("green-theme");
-        }
-        box3Btn.onclick = function () {
-            document.body.classList.add("green-theme");
-            document.body.classList.remove("orange-theme");
-            document.body.classList.remove("aqua-theme");
-        }
+
+        // const box1Btn = document.querySelector(".box1");
+        // const box2Btn = document.querySelector(".box2");
+        // const box3Btn = document.querySelector(".box3");
+
+        // box1Btn.onclick = function () {
+        //     document.body.classList.add("aqua-theme");
+        //     localStorage.setItem("aqua-theme", "aqua");
+        // }
+        // box2Btn.onclick = function () {
+        //     document.body.classList.add("orange-theme");
+        //     localStorage.setItem("orange-theme", "orange");
+        // }
+        // box3Btn.onclick = function () {
+        //     document.body.classList.add("green-theme");
+        //     localStorage.setItem("green-theme", "green");
+        // }
+        // if (localStorage.getItem("aqua-theme") === 'aqua') {
+        //     document.body.classList.add("aqua-theme");
+        //     document.body.classList.remove("orange-theme");
+        //     document.body.classList.remove("green-theme");
+        // }
+        // else if (localStorage.getItem("orange-theme") === 'orange') {
+        //     document.body.classList.add("orange-theme");
+        //     document.body.classList.remove("aqua-theme");
+        //     document.body.classList.remove("green-theme");
+        // }
+        // else if (localStorage.getItem("green-theme") === 'green') {
+        //     document.body.classList.add("green-theme");
+        //     document.body.classList.remove("orange-theme");
+        //     document.body.classList.remove("aqua-theme");
+        // }
 
     </script>
 </body>

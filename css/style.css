@@ -12,7 +12,7 @@
 :root {
     --text-color: #121212;
     --main-color: #fdbb2e;
-    --background-color: linear-gradient(to right, #fdbb2e, #fdbb2ece);
+    /* --background-color:#fdbb2e; */
 }
 
 ::selection {
@@ -20,21 +20,20 @@
     color: white;
 }
 
-.aqua-theme {
+/* .aqua {
     --main-color: aqua;
     --background-color: linear-gradient(to right, aqua, aqua);
-    ;
 }
 
-.orange-theme {
+.orange {
     --main-color: #fdbb2e;
     --background-color: linear-gradient(to right, #fdbb2e, #fdbb2ece);
 }
 
-.green-theme {
+.green {
     --main-color: rgb(112, 196, 112);
     --background-color: linear-gradient(to right, rgb(112, 196, 112), rgb(112, 196, 112));
-}
+} */
 
 body {
     font-family: myFont;
@@ -94,7 +93,8 @@ ul {
 
 /* -----------------------------Start header----------------------------- */
 header {
-    background-image: var(--background-color);
+    /* background-image: var(--background-color); */
+    background-color: var(--main-color);
     height: 100vh;
 
     display: flex;
@@ -1314,7 +1314,7 @@ header .container .header-content .header-image:hover p {
 }
 
 .control .theam-box .box3 {
-    background-color: rgb(112, 196, 112);
+    background-color: #70c470;
 }
 
 /* End theam box */
